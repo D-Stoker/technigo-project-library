@@ -5,12 +5,34 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="style.css">
-  <title>Library</title>
+  <title>My Library</title>
 </head>
 
 <body>
+  <h1>My Library</h1>
+  <form id="randomBookForm">
+    <button type="button" id="randomBookBtn">Pick a Random Book</button>
+  </form>
+  <form id="sortBooksForm">
+    <label for="sortBooks">Sort by:</label>
+    <select id="sortBooks">
+      <option value="newest">Newest to Oldest</option>
+      <option value="oldest">Oldest to Newest</option>
+      <option value="highest">Highest to Lowest Rating</option>
+      <option value="lowest">Lowest to Highest Rating</option>
+    </select>
+  </form>
+  <form id="filterBooksForm">
+    <label for="filterGenre">Filter by Genre:</label>
+    <select id="filterGenre">
+      <option value="all">All Genres</option>
+      <option value="Fiction">Fiction</option>
+      <option value="Science Fiction">Science Fiction</option>
+      <option value="Classic">Classic</option>
+    </select>
+  </form>
+  <article id="randomBookDisplay"></article>
   <article id="book-list"></article>
-  <h1>Library</h1>
   <script src="script.js"></script>
 </body>
 

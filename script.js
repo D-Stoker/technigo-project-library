@@ -1,10 +1,4 @@
-/*Here we have created two different arrays that you can work with if you want.
-If you choose to create your own arrays with elements, just make sure to create
-some properties that is possible to filter and sort.
-
-Remember to remove code you don't need.
-*/
-
+// Book list array
 const books = [
   {
     title: 'The Great Gatsby',
@@ -74,7 +68,7 @@ const books = [
     rating: 4.7,
     description:
       'The first book in the beloved Harry Potter series, it introduces readers to the magical world of Hogwarts and the young wizard Harry Potter.',
-    image: "./books-images/harry-potter-and-the-sorcerer'.jpg"
+    image: "./books-images/unknown.jpg"
   },
   {
     title: 'Moby-Dick',
@@ -188,11 +182,12 @@ const books = [
   }
 ]
 
-function displayBooks() {
+// Book display function
+function displayBooks(bookArray = books) {
   const bookList = document.getElementById("book-list"); // 1. get the container
   bookList.innerHTML = ""; // 2. Clear previous content
 
-  books.forEach((book) => { // 3. loop through books
+  bookArray.forEach((book) => { // 3. loop through books
     const bookArticle = document.createElement("article"); // 4. create <article> for each book
     bookArticle.classList.add("book");
 
@@ -218,7 +213,7 @@ function displayBooks() {
     const bookImage = document.createElement("img");
     bookImage.src = book.image;
     bookImage.alt = `Cover of ${book.title}`;
-    bookImage.classList.add("book-cover");
+    bookImage.classList.add("bookCover");
 
     // 6. append elements to the article
     bookArticle.appendChild(bookTitle);
@@ -236,3 +231,43 @@ function displayBooks() {
 
 // call the function to display books when the page loads
 displayBooks();
+
+
+// Random Button Submission
+document.getElementById("randomBookBtn").addEventListener("click", function () {
+  if (books.length === 0) return; // Prevents errors if the array is empty
+
+  const randomIndex = Math.floor(Math.random() * books.length);
+  const randomBook = books[randomIndex];
+
+  const randomBookDisplay = document.getElementById("randomBookDisplay");
+  randomBookDisplay.innerHTML = `
+    <h3>${randomBook.title}</h3>
+    <p>by ${randomBook.author}</p>
+    <img src="${randomBook.image}" alt="Cover of ${randomBook.title}" style="max-width: 150px;">`;
+});
+
+// Sorting Books Dropdown
+document.getElementById("sortBooks").addEventListener("change", function () {
+  const sortOption = this.value;
+
+  books.sort((a, b) => {
+    if (sortOption === "newest") return b.year - a.year;
+    if (sortOption === "oldest") return a.year - b.year;
+    if (sortOption === "highest") return b.rating - a.rating;
+    if (sortOption === "lowest") return a.rating - b.rating;
+  });
+
+  displayBooks(sortedBooks); // pass sorted books
+});
+
+// Filtering Event Listener
+document.getElementById("filterGenre").addEventListener("change", function () {
+  const selectedGenre = this.value;
+
+  const filteredBooks = selectedGenre === "all"
+    ? books
+    : books.filter(book => book.genre === selectedGenre);
+
+  displayBooks(filteredBooks); // pass filtered books
+});
