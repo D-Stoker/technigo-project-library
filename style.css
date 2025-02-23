@@ -1,3 +1,9 @@
 body {
-  background: blue;
+  background: white;
+}
+
+.book-cover {
+  width: 150px;
+  height: auto;
+  object-fit: cover;
 }
