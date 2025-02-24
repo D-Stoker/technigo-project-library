@@ -263,7 +263,7 @@ document.getElementById("sortBooks").addEventListener("change", function () {
     if (sortOption === "lowest") return a.rating - b.rating;
   });
 
-  displayBooks(sortedBooks); // pass sorted books
+  displayBooks(books); // pass sorted books
 });
 
 // Filtering Event Listener
