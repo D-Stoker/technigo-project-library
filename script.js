@@ -245,7 +245,12 @@ document.getElementById("randomBookBtn").addEventListener("click", function () {
     <h3>${randomBook.title}</h3>
     <p>by ${randomBook.author}</p>
     <img src="${randomBook.image}" alt="Cover of ${randomBook.title}" style="max-width: 150px;">`;
+
+  // Ensure the display is set to block
+  randomBookDisplay.style.display = "block";
 });
+
+
 
 // Sorting Books Dropdown
 document.getElementById("sortBooks").addEventListener("change", function () {

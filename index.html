@@ -5,14 +5,17 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="style.css">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Merriweather:wght@300;400;700&display=swap"
+    rel="stylesheet">
   <title>My Library</title>
 </head>
 
 <body>
-  <h1>My Library</h1>
-  <form id="randomBookForm">
-    <button type="button" id="randomBookBtn">Pick a Random Book</button>
-  </form>
+  <header>
+    <h1 id="top">My Library</h1>
+    <p>Explore, sort, and find your next read!</p>
+  </header>
   <form id="sortBooksForm">
     <label for="sortBooks">Sort by:</label>
     <select id="sortBooks">
@@ -31,8 +34,16 @@
       <option value="Classic">Classic</option>
     </select>
   </form>
+  <form id="randomBookForm">
+    <button type="button" id="randomBookBtn">Pick a Random Book</button>
+  </form>
   <article id="randomBookDisplay"></article>
   <article id="book-list"></article>
+  <footer>
+    © 2025 D. Stoker | <a href="https://github.com/D-Stoker">GitHub</a> | <a
+      href="https://www.linkedin.com/in/daniel-stoker/">LinkedIn</a> | <a href="#top">Back to
+      Top</a>
+  </footer>
   <script src="script.js"></script>
 </body>
 
