@@ -1,10 +1,26 @@
-# Library
+# Page Picker: A Digital Library
+Explore, sort, and find your next read!
 
-Replace this readme with your own information about the project. You can include things like:
+## Description
+Page Picker is a simple digital library where users can explore, sort, and find their next read.
 
-- Brief description of the assignment
-- How you approached the task, what tools and techniques you used, and how you planned it
-- If you had more time, what would be next?
 
-## View it live
-Every project should be deployed somewhere. Be sure to include the link to the deployed project so that the viewer can click around and see what it's all about.
+## Features
+- **Random Book Picker**: Discover a book at random.
+- **Genre Filter**: Filter books by genre.
+- **Sorting Options**: Sort books by newest, oldest, highest-rated, or lowest-rated.
+- **Responsive Design**: Works on desktop and mobile.
+
+## Tech Stack
+- HTML
+- CSS
+- JavaScript
+- Hosted on **Netlify**
+
+## Live Demo
+🔗 [Page Picker on Netlify](https://pagepicker.netlify.app)
+
+## Future Improvements
+- Expand the book list.
+- Improve UI styling and responsiveness.
+- Add a search functionality for easier book discovery.
